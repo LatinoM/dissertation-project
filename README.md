@@ -1,7 +1,11 @@
 # Dissertation Project
+
 *Title:* Game for Education about Programming
+
 *Author:* Matthew Latino
+
 ---
+
 ## Description
 The aim of this project is to create a 2D sandbox game where the player is tasked with creating factories that teach programming concepts to the player. The main idea is inspired off of *Turing Complete* where the player will first start off creating fundamental logic gates, but then slowly use pieces that they have made, to create a basic computer system.
 I would like to branch off of this idea by making programming the main focus of the game, rather than the electrical engineering of a computer.
