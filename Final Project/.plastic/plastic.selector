@@ -1,0 +1,4 @@
+repository "final-year-project@LatinoM@cloud"
+  path "/"
+    br "/main"
+    co "/main"
