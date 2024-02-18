@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace Blocks
 {
-    public class BuildingBlock<T> : MonoBehaviour
+    public abstract class BuildingBlock<T> : MonoBehaviour
     {
         protected string type;
         protected BuildingBlock<T> next;
@@ -21,6 +21,8 @@ namespace Blocks
         {
             return val;
         }
+
+        protected abstract void initialise();
 
 
 
