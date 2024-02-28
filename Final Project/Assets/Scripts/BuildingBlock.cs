@@ -1,13 +1,20 @@
 using UnityEngine;
 namespace Blocks
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BuildingBlock<T> : MonoBehaviour
     {
-        protected string type;
-        protected BuildingBlock<T> next;
+
+        public enum Type
+        {
+            BIT,
+            BIT_NUM
+        }
+        public Type type;
+        public BuildingBlock<T> next;
         protected T val;
 
-        public string getType()
+        public Type getType()
         {
             return type;
         }
@@ -23,6 +30,47 @@ namespace Blocks
         }
 
         protected abstract void initialise();
+
+        // Click and drag variables
+        private Vector3 offset;
+        private bool isDragging = false;
+
+        // Click and drag methods
+        void OnMouseDown()
+        {
+            // Calculate offset from mouse position to object position
+            offset = transform.position - GetMouseWorldPosition();
+            isDragging = true;
+
+            // Perform click action
+            clicked();
+        }
+
+        void OnMouseDrag()
+        {
+            if (isDragging)
+            {
+                // Update object position based on mouse movement
+                transform.position = GetMouseWorldPosition() + offset;
+
+                // Perform drag action
+                //Debug.Log("Object dragged!");
+            }
+        }
+
+        void OnMouseUp()
+        {
+            // Reset dragging state
+            isDragging = false;
+        }
+
+        Vector3 GetMouseWorldPosition()
+        {
+            // Convert mouse position to world space
+            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        public abstract void clicked();
 
 
 

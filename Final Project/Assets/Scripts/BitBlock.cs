@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System;
 namespace Blocks
 {
     public class BitBlock : BuildingBlock<int>
@@ -9,7 +10,7 @@ namespace Blocks
         void OnEnable()
         {
             this.val = 0;
-            this.type = "bit";
+            this.type = BuildingBlock<int>.Type.BIT;
             initialise();
         }
 
@@ -27,14 +28,36 @@ namespace Blocks
             }
         }
 
-        void OnMouseDown()
+        public int getBitLength()
         {
-            //Debug.Log("Bit Block has been clicked!");
+            if (this.next == null)
+                return 1;
+            if (this.next.type == BuildingBlock<int>.Type.BIT)
+            {
+                Debug.Log("This next block is a bit!");
+                BitBlock nextBit = (BitBlock)this.next;
+                Debug.Log(nextBit + " is the next bit");
+                return nextBit.getBitLength() + 1;
+            }
+            return 1;
+        }
+
+        public int getBitNumValue(int unitIndex)
+        {
+            if (unitIndex == 0)
+                return this.val;
+            BitBlock nextBit = (BitBlock)this.next;
+            return ((int)Math.Pow(2, unitIndex)) * this.val + nextBit.getBitNumValue(unitIndex - 1);
+        }
+
+        public override void clicked()
+        {
             if (this.val == 0)
                 this.val = 1;
             else
                 this.val = 0;
         }
+
 
     }
 }
