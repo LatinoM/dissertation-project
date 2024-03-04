@@ -8,8 +8,6 @@ namespace Blocks
         public TextMeshPro textMeshPro;
         public int bitLength;
 
-        public BuildingBlock<int> currentBlock; // remove me
-
         void OnEnable()
         {
 
@@ -37,16 +35,11 @@ namespace Blocks
 
         int getBitLength()
         {
-            Debug.Log("Finding bit length!");
-            Debug.Log("Next Block type is: " + this.next.type);
             if (this.next.type == BuildingBlock<int>.Type.BIT)
             {
-                Debug.Log("It's a bit!");
                 BitBlock nextBit = (BitBlock)this.next;
-                Debug.Log(nextBit + " is the next bit");
                 return nextBit.getBitLength();
             }
-            Debug.Log("No Bit Blocks connected");
             return 0;
 
         }

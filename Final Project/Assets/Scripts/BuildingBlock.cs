@@ -8,7 +8,8 @@ namespace Blocks
         public enum Type
         {
             BIT,
-            BIT_NUM
+            BIT_NUM,
+            COMP_NUM
         }
         public Type type;
         public BuildingBlock<T> next;
