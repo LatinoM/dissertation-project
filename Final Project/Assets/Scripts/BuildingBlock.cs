@@ -9,7 +9,8 @@ namespace Blocks
         {
             BIT,
             BIT_NUM,
-            COMP_NUM
+            COMP_NUM,
+            BOOL_OUT
         }
         public Type type;
         public BuildingBlock<T> next;
