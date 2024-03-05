@@ -11,7 +11,8 @@ namespace Blocks
             BIT_NUM,
             COMP_NUM,
             BOOL_OUT,
-            MATH
+            MATH,
+            MATH_OUT
         }
         public Type type;
         public BuildingBlock<T> next;
