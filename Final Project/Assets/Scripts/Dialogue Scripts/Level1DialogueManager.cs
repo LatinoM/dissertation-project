@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour
+public class Level1DialogueManager : MonoBehaviour
 {
-    public Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
     }
-
 
 }
