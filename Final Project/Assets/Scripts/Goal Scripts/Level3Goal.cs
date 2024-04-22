@@ -31,14 +31,14 @@ namespace Blocks
             {
                 StartCoroutine(IIsStillCorrect());
             }
-            Debug.Log(boolCorrect);
+            //Debug.Log(boolCorrect);
         }
 
         IEnumerator IStartNextScene()
         {
             switching = true;
             yield return new WaitForSeconds(numOfSecondsToSwitch);
-            SceneManager.LoadScene("Level 1 - Bits");
+            SceneManager.LoadScene("Level 4 - Arithmetic");
         }
 
         IEnumerator IIsStillCorrect()

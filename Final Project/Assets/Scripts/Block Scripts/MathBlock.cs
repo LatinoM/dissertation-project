@@ -102,5 +102,10 @@ namespace Blocks
                     return "%";
             }
         }
+
+        public OperatorType getOperator()
+        {
+            return this.mode;
+        }
     }
 }
