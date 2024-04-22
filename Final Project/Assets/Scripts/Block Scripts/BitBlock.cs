@@ -34,9 +34,9 @@ namespace Blocks
                 return 1;
             if (this.next.type == BuildingBlock<int>.Type.BIT)
             {
-                Debug.Log("This next block is a bit!");
+                //Debug.Log("This next block is a bit!");
                 BitBlock nextBit = (BitBlock)this.next;
-                Debug.Log(nextBit + " is the next bit");
+                //Debug.Log(nextBit + " is the next bit");
                 return nextBit.getBitLength() + 1;
             }
             return 1;

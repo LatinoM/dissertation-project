@@ -47,6 +47,11 @@ namespace Blocks
             textMeshPro = textMeshProTransform.GetComponent<TextMeshPro>();
         }
 
+        public CompType getMode()
+        {
+            return this.mode;
+        }
+
         public override void clicked()
         {
             // when clicked, it should cycle mode and thus change its output
