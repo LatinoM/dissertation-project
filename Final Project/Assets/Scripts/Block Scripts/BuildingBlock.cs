@@ -13,7 +13,8 @@ namespace Blocks
             BOOL_OUT,
             MATH,
             MATH_OUT,
-            NUM_OUT
+            NUM_OUT,
+            VAR
         }
         public Type type;
         public BuildingBlock<T> next;

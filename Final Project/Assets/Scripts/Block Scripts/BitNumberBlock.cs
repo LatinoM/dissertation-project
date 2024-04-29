@@ -8,6 +8,8 @@ namespace Blocks
         public TextMeshPro textMeshPro;
         public int bitLength;
 
+
+
         void OnEnable()
         {
 
@@ -15,7 +17,7 @@ namespace Blocks
             this.type = BuildingBlock<int>.Type.BIT_NUM;
             initialise();
             this.bitLength = getBitLength();
-            this.val = 0;
+
         }
 
         protected override void initialise()
@@ -30,7 +32,10 @@ namespace Blocks
             {
                 textMeshPro.text = this.val.ToString();
             }
+
             this.val = getBitNumValue();
+
+
         }
 
         int getBitLength()

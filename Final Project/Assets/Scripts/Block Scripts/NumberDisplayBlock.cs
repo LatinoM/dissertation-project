@@ -5,13 +5,19 @@ namespace Blocks
     public class NumberDisplayBlock : BuildingBlock<int>
     {
         public TextMeshPro textMeshPro;
+        public bool preset;
+        public int presetValue;
 
 
         void OnEnable()
         {
             this.type = BuildingBlock<int>.Type.NUM_OUT;
             initialise();
-            this.val = 0;
+            if (preset)
+            {
+                this.val = presetValue;
+            }
+
         }
 
         protected override void initialise()
@@ -26,7 +32,11 @@ namespace Blocks
             {
                 textMeshPro.text = this.val.ToString();
             }
-            this.val = this.next.getVal();
+            if (!preset)
+            {
+                this.val = this.next.getVal();
+            }
+
         }
 
         public override void clicked()
