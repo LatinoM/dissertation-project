@@ -19,13 +19,19 @@ namespace Blocks
             GT,
             GE
         }
-        private CompType mode = CompType.EQUIV;
+        public bool preset;
+        public CompType presetMode;
+        private CompType mode;
 
         void OnEnable()
         {
             this.type = BuildingBlock<bool>.Type.COMP_NUM;
             initialise();
             this.val = false;
+            if (preset)
+            {
+                this.mode = presetMode;
+            }
         }
 
         void Update()
@@ -55,26 +61,29 @@ namespace Blocks
         public override void clicked()
         {
             // when clicked, it should cycle mode and thus change its output
-            switch (this.mode)
+            if (!preset)
             {
-                case CompType.EQUIV:
-                    this.mode = CompType.INEQUIV;
-                    break;
-                case CompType.INEQUIV:
-                    this.mode = CompType.LT;
-                    break;
-                case CompType.LT:
-                    this.mode = CompType.LE;
-                    break;
-                case CompType.LE:
-                    this.mode = CompType.GT;
-                    break;
-                case CompType.GT:
-                    this.mode = CompType.GE;
-                    break;
-                default:
-                    this.mode = CompType.EQUIV;
-                    break;
+                switch (this.mode)
+                {
+                    case CompType.EQUIV:
+                        this.mode = CompType.INEQUIV;
+                        break;
+                    case CompType.INEQUIV:
+                        this.mode = CompType.LT;
+                        break;
+                    case CompType.LT:
+                        this.mode = CompType.LE;
+                        break;
+                    case CompType.LE:
+                        this.mode = CompType.GT;
+                        break;
+                    case CompType.GT:
+                        this.mode = CompType.GE;
+                        break;
+                    default:
+                        this.mode = CompType.EQUIV;
+                        break;
+                }
             }
         }
 

@@ -18,13 +18,20 @@ namespace Blocks
             MODULUS
         }
 
-        private OperatorType mode = OperatorType.ADD;
+        public bool preset;
+        public OperatorType presetMode;
+
+        private OperatorType mode;
 
         void OnEnable()
         {
             this.type = BuildingBlock<int>.Type.MATH;
             initialise();
             this.val = 0;
+            if (preset)
+            {
+                mode = presetMode;
+            }
         }
 
         void Update()
@@ -48,24 +55,27 @@ namespace Blocks
 
         public override void clicked()
         {
-            // when clicked, it should cycle mode and thus change its output
-            switch (this.mode)
+            if (!preset)
             {
-                case OperatorType.ADD:
-                    this.mode = OperatorType.SUB;
-                    break;
-                case OperatorType.SUB:
-                    this.mode = OperatorType.MULT;
-                    break;
-                case OperatorType.MULT:
-                    this.mode = OperatorType.FLOOR_DIV;
-                    break;
-                case OperatorType.FLOOR_DIV:
-                    this.mode = OperatorType.MODULUS;
-                    break;
-                default:
-                    this.mode = OperatorType.ADD;
-                    break;
+                // when clicked, it should cycle mode and thus change its output
+                switch (this.mode)
+                {
+                    case OperatorType.ADD:
+                        this.mode = OperatorType.SUB;
+                        break;
+                    case OperatorType.SUB:
+                        this.mode = OperatorType.MULT;
+                        break;
+                    case OperatorType.MULT:
+                        this.mode = OperatorType.FLOOR_DIV;
+                        break;
+                    case OperatorType.FLOOR_DIV:
+                        this.mode = OperatorType.MODULUS;
+                        break;
+                    default:
+                        this.mode = OperatorType.ADD;
+                        break;
+                }
             }
         }
 
