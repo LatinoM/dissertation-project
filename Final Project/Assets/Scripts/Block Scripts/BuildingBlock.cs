@@ -15,7 +15,8 @@ namespace Blocks
             MATH_OUT,
             NUM_OUT,
             VAR,
-            ARR
+            ARR,
+            NOT
         }
         public Type type;
         public BuildingBlock<T> next;
