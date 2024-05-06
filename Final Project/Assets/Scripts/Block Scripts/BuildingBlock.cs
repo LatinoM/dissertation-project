@@ -16,7 +16,8 @@ namespace Blocks
             NUM_OUT,
             VAR,
             ARR,
-            NOT
+            NOT,
+            IFELSE
         }
         public Type type;
         public BuildingBlock<T> next;
