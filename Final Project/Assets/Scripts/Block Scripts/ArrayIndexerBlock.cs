@@ -39,10 +39,5 @@ namespace Blocks
             if (index >= arraySize)
             { index = 0; }
         }
-
-        public int getVal()
-        {
-            return this.val;
-        }
     }
 }
