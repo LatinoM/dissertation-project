@@ -9,6 +9,8 @@ namespace Blocks
         public int numOfLegs;
         public bool hasTail;
         public int numOfEyes;
+
+
         public Animal(bool makesNoise, int numOfLegs,
             bool hasTail, int numOfEyes)
         {
@@ -27,10 +29,19 @@ namespace Blocks
             new Animal(true, 6, false, 5) // Fly
         };
 
+        public GameObject spriteObj;
+
+        Sprite dogSprite;
+        Sprite antSprite;
+        Sprite flySprite;
+
         int currentIndex;
 
         void OnEnable()
         {
+            dogSprite = Resources.Load("dog", typeof(Sprite)) as Sprite;
+            antSprite = Resources.Load("ant", typeof(Sprite)) as Sprite;
+            flySprite = Resources.Load("fly", typeof(Sprite)) as Sprite;
             initialise();
         }
 
@@ -42,10 +53,16 @@ namespace Blocks
 
         public override void clicked()
         {
-            if (currentIndex++ >= 3)
+            if (currentIndex == 2)
             {
                 currentIndex = 0;
             }
+            else
+            {
+                currentIndex++;
+            }
+            switchImage();
+            //Debug.Log("Current index: " + currentIndex);
         }
 
         public bool getNoise()
@@ -66,6 +83,22 @@ namespace Blocks
         public int getEyes()
         {
             return this.animals[currentIndex].numOfEyes;
+        }
+
+        void switchImage()
+        {
+            switch (this.currentIndex)
+            {
+                case 0:
+                    spriteObj.GetComponent<SpriteRenderer>().sprite = dogSprite;
+                    return;
+                case 1:
+                    spriteObj.GetComponent<SpriteRenderer>().sprite = antSprite;
+                    return;
+                default:
+                    spriteObj.GetComponent<SpriteRenderer>().sprite = flySprite;
+                    return;
+            }
         }
     }
 

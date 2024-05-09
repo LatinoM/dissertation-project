@@ -17,7 +17,7 @@ namespace Blocks
             return;
         }
 
-        public override int getVal(int index)
+        public int getVal(int index)
         {
             if (index < 0 || index >= array.Length || array.Length == 0)
             {
