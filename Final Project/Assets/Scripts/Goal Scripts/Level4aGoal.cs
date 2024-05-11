@@ -30,7 +30,7 @@ namespace Blocks
         {
             switching = true;
             yield return new WaitForSeconds(numOfSecondsToSwitch);
-            SceneManager.LoadScene("Level 1 - Bits");
+            SceneManager.LoadScene("Level 5 - Variables");
         }
 
         IEnumerator IIsStillCorrect()

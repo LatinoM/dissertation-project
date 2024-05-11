@@ -30,8 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 5 - Variables.unity
     guid: b1e2e96bf9422415f86144dc1acd0806
   - enabled: 1
-    path: Assets/Scenes/Level 6 -Arrays.unity
+    path: Assets/Scenes/Level 5a.unity
+    guid: 5683ea373518a4d0b8dd3a691d535cdd
+  - enabled: 1
+    path: Assets/Scenes/Level 6 - Arrays.unity
     guid: d6def72039bea4683b5e1f29673d7171
+  - enabled: 1
+    path: Assets/Scenes/Level 6a.unity
+    guid: b8b7b405aee1446059ac6adc23ad335c
   - enabled: 1
     path: Assets/Scenes/Level 7 - Conditions.unity
     guid: 8d63d7d4635e24c95a8ab1fe720c595a
