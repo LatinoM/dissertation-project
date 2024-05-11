@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace Blocks
 {
 
-    public class Level2Goal : MonoBehaviour
+    public class Level2aGoal : MonoBehaviour
     {
 
         public int numOfSecondsToSwitch = 1;
@@ -15,7 +15,7 @@ namespace Blocks
 
         private bool switching = false;
 
-        public int goalValue = 13;
+        public int goalValue = 7;
 
         // Update is called once per frame
         void Update()
@@ -30,7 +30,7 @@ namespace Blocks
         {
             switching = true;
             yield return new WaitForSeconds(numOfSecondsToSwitch);
-            SceneManager.LoadScene("Level 2a");
+            SceneManager.LoadScene("Level 3 - Number Comparison");
 
         }
     }

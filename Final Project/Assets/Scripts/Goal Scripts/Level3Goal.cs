@@ -8,28 +8,17 @@ namespace Blocks
 
     public class Level3Goal : MonoBehaviour
     {
-        public int numOfSecondsToSwitch = 1;
-
-        public BitNumberBlock bitNumberBlock;
-
+        public int numOfSecondsToSwitch = 3;
         public CompareNumBlock compareNumBlock;
-
-        public BoolOutputBlock boolOutputBlock;
-
         private bool switching = false;
-
-        public bool boolGoalValue = true;
         public CompareNumBlock.CompType compGoalValue = CompareNumBlock.CompType.GT;
-        public int numberGoalValue = 5;
 
         void Update()
         {
-            bool boolCorrect = boolOutputBlock.getVal() == boolGoalValue;
             bool compCorrect = compareNumBlock.getMode() == compGoalValue;
-            bool numberCorrect = bitNumberBlock.getVal() == numberGoalValue;
-            if (!switching && boolCorrect && compCorrect && numberCorrect)
+            if (!switching && compCorrect)
             {
-                StartCoroutine(IIsStillCorrect());
+                StartCoroutine(IStartNextScene());
             }
             //Debug.Log(boolCorrect);
         }
@@ -38,21 +27,10 @@ namespace Blocks
         {
             switching = true;
             yield return new WaitForSeconds(numOfSecondsToSwitch);
-            SceneManager.LoadScene("Level 4 - Arithmetic");
+            SceneManager.LoadScene("Level 3a");
         }
 
-        IEnumerator IIsStillCorrect()
-        {
-            // Used to make sure the correct value is intentionally set
-            yield return new WaitForSeconds(1);
-            bool boolCorrect = boolOutputBlock.getVal() == boolGoalValue;
-            bool compCorrect = compareNumBlock.getMode() == compGoalValue;
-            bool numberCorrect = bitNumberBlock.getVal() == numberGoalValue;
-            if (!switching && boolCorrect && compCorrect && numberCorrect)
-            {
-                StartCoroutine(IStartNextScene());
-            }
-        }
+
 
     }
 }
