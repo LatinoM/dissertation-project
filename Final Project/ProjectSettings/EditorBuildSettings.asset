@@ -42,12 +42,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 7 - Conditions.unity
     guid: 8d63d7d4635e24c95a8ab1fe720c595a
   - enabled: 1
-    path: Assets/Scenes/Scene 8 - Functions.unity
+    path: Assets/Scenes/Level 7a.unity
+    guid: 070a6b12289bf47bd8c9ef2c037d9528
+  - enabled: 1
+    path: Assets/Scenes/Level 7b.unity
+    guid: ed3ec9b081e414d2093eb7d2d1babe1f
+  - enabled: 1
+    path: Assets/Scenes/Level 8 - Functions.unity
     guid: 3ba3a6e9df7bc494aaba5cadf880837b
   - enabled: 1
-    path: Assets/Scenes/Scene 9 - Loops.unity
+    path: Assets/Scenes/Level 9 - Loops.unity
     guid: fa6ab41dd16664d0db31a9964aa7f087
   - enabled: 1
-    path: Assets/Scenes/Scene 10 - Classes.unity
+    path: Assets/Scenes/Level 9a.unity
+    guid: ab8d9a434fb91497db12f86e8116ea61
+  - enabled: 1
+    path: Assets/Scenes/Level 10 - Classes.unity
     guid: 823c868b065d64217903277a0516c5f9
+  - enabled: 1
+    path: Assets/Scenes/Level 10a.unity
+    guid: 3ea0fabc1c9824c7cb4e6319422d8aad
   m_configObjects: {}

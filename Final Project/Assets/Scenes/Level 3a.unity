@@ -1016,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2555949807588333201, guid: 2cf0d14534a9a4b149ac12c52b81ed40, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: create a TRUE statement, using the GREATER THAN comparison.
+      value: create a TRUE statement, using the LESS THAN comparison.
       objectReference: {fileID: 0}
     - target: {fileID: 2555949807588333201, guid: 2cf0d14534a9a4b149ac12c52b81ed40, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
