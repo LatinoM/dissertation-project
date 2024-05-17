@@ -15,7 +15,7 @@ namespace Blocks
         {
             if (!switching && numberDisplayBlock.getVal() == goalValue)
             {
-                StartCoroutine(IStartNextScene());
+                StartCoroutine(IStillCorrect());
             }
         }
 
@@ -24,6 +24,15 @@ namespace Blocks
             switching = true;
             yield return new WaitForSeconds(numOfSecondsToSwitch);
             SceneManager.LoadScene("Level 8 - Functions");
+        }
+
+        IEnumerator IStillCorrect()
+        {
+            yield return new WaitForSeconds(1.5f);
+            if (numberDisplayBlock.getVal() == goalValue)
+            {
+                StartCoroutine(IStartNextScene());
+            }
         }
 
     }

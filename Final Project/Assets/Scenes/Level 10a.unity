@@ -2705,6 +2705,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 514806870796170406, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514806870796170406, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514806870796170406, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514806870796170406, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 4236025337739943313, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
       propertyPath: m_Name
       value: LeftMathBlock (1)
@@ -2804,6 +2820,18 @@ PrefabInstance:
     - target: {fileID: 6940037614484453568, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
       propertyPath: presetMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459124909739924577, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459124909739924577, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459124909739924577, guid: f067e691b16b4488d88d312d57024ca4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
