@@ -25,7 +25,7 @@ namespace Blocks
             if (this.attributeBlock.numVal > -1)
             {
                 textMeshPro.text = this.attributeBlock.numVal.ToString();
-                textMeshPro.color = Color.black;
+                textMeshPro.color = Color.white;
                 this.val = this.attributeBlock.numVal;
                 return;
             }
